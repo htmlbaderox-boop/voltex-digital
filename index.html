@@ -3,109 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>voltex-digital</title>
+    <title>Voltex Digital | Premium Agency</title>
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* كود الخلفية والتنسيق العام */
+        /* إعدادات عامة */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            background-color: #1a1a1a;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #0f0f11;
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            overflow: hidden;
+            padding: 0;
+            overflow-x: hidden;
         }
 
-        /* أنيميشن دخول الكارط */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* المينيو الفوقاني (Navbar) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 15, 17, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        /* تنسيق الكارط الرئيسية */
-        .card {
-            background-color: #2b2b2b;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            width: 350px;
-            /* تطبيق أنيميشن الدخول */
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        /* العنوان الرئيسي */
-        .card h1 {
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
             color: #ff9933;
-            margin-top: 0;
-            font-size: 28px;
             letter-spacing: 1px;
         }
-
-        /* الوصف */
-        .card p {
+        nav a {
             color: #ffffff;
-            font-size: 16px;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-
-        /* التصويرة */
-        .card img {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.4s ease;
-        }
-
-        /* تأثير خفيف فاش دوز الماوس فوق التصويرة */
-        .card img:hover {
-            transform: scale(1.02);
-        }
-
-        /* البوطون والتأثيرات ديالو */
-        .card .btn {
-            background-color: #ffffff;
-            color: #ff9933;
-            border: none;
-            padding: 12px 35px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
             text-decoration: none;
-            display: inline-block;
-            /* هادي كتخلي الحركة تكون ناعمة وسلسة */
-            transition: all 0.3s ease; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-left: 35px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff9933;
         }
 
-        /* تأثير الماوس فوق البوطون (Hover) */
-        .card .btn:hover {
+        /* واجهة السيت الرئيسية (Hero Section) */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            margin-top: 60px;
+            box-sizing: border-box;
+            gap: 50px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-text h1 span {
+            color: #ff9933;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #aaaaaa;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        /* بوطونات بروفيسيونيل */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .btn-primary {
             background-color: #ff9933;
             color: #ffffff;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 153, 51, 0.5);
+        }
+        .btn-secondary {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: #0f0f11;
+            transform: translateY(-3px);
+        }
+
+        /* التصويرة ديالك فـ الهيرو */
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            animation: float 4s ease-in-out infinite;
+        }
+        .hero-img img {
+            max-width: 100%;
+            width: 380px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* أنيميشن الطيران للتصويرة */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* سيكشن الخدمات (Services Section) */
+        .services {
+            padding: 100px 8%;
+            background-color: #141417;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+        .services h2 span {
+            color: #ff9933;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: #1c1c21;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+        .service-card i {
+            font-size: 40px;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #888888;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 153, 51, 0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        /* الفوتر (Footer) */
+        footer {
+            padding: 40px 8%;
+            background-color: #0f0f11;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .footer-socials a {
+            color: #aaaaaa;
+            font-size: 20px;
+            margin-left: 20px;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        .footer-socials a:hover {
+            transform: scale(1.2);
+        }
+        .footer-socials a.insta:hover { color: #e1306c; }
+        .footer-socials a.lnk:hover { color: #0077b5; }
+        .footer-socials a.wts:hover { color: #25d366; }
+
+        /* جعل الموقع متناسق مع التلفونات (Responsive) */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 100px 5% 50px 5%;
+            }
+            .hero-text h1 { font-size: 40px; }
+            .cta-buttons { justify-content: center; }
+            nav { display: none; } /* كيتخبا المينيو فالتلفون باش نقدوه من بعد */
+            footer { flex-direction: column; text-align: center; }
+            .footer-socials a { margin: 0 10px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>voltex-digital</h1>
-        <p>the first digital agency in the region</p>
-        <img src="pic.png" alt="Digital Agency">
-        <br>
-        <button class="btn">visit our website</button>
-    </div>
+    <!-- المينيو -->
+    <header>
+        <div class="logo">Voltex.</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>The First Digital Agency In <span>The Region</span></h1>
+            <p>We craft high-performance digital experiences, modern branding, and custom web architecture tailored to scale your brand globally.</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn-primary">Our Services</a>
+                <a href="#" class="btn-secondary">Let's Talk</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <!-- التصويرة ديالك خدامة هنا ديريكت -->
+            <img src="pic.png" alt="Voltex Digital Showcase">
+        </div>
+    </section>
+
+    <!-- سيكشن الخدمات -->
+    <section class="services" id="services">
+        <h2>Our Core <span>Services</span></h2>
+        <div class="services-grid">
+            
+            <!-- الخدمة 1 -->
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Building lighting-fast, responsive websites with clean and efficient modern frameworks.</p>
+            </div>
+
+            <!-- الخدمة 2 -->
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Data-driven strategies to boost your online visibility, tracking, and customer conversion.</p>
+            </div>
+
+            <!-- الخدمة 3 -->
+            <div class="service-card">
+                <i class="fas fa-palette"></i>
+                <h3>Brand Identity</h3>
+                <p>Creating unique logos, modern visual guidelines, and memorable experiences for your business.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>&copy; 2026 Voltex Digital. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="lnk"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="wts"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
 
 </body>
 </html>
