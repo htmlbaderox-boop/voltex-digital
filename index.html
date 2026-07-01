@@ -1,66 +1,111 @@
-<style>
-  body {
-    background-color: #11141a;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voltex-digital</title>
+    <style>
+        /* كود الخلفية والتنسيق العام */
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
 
-  .card {
-    background-color: #1e222b;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    max-width: 350px;
-  }
+        /* أنيميشن دخول الكارط */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  h1 {
-    color: #ff9f1c;
-    margin-top: 0;
-    font-size: 28px;
-    text-transform: lowercase; /* باش تبقى السمية بحال اللوغو صغير */
-  }
+        /* تنسيق الكارط الرئيسية */
+        .card {
+            background-color: #2b2b2b;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 350px;
+            /* تطبيق أنيميشن الدخول */
+            animation: fadeInUp 1s ease-out forwards;
+        }
 
-  p {
-    color: #a0a5b5;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
+        /* العنوان الرئيسي */
+        .card h1 {
+            color: #ff9933;
+            margin-top: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
 
-  img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 10px;
-  }
+        /* الوصف */
+        .card p {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
 
-  a {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 24px;
-    background-color: #ff9f1c;
-    color: #11141a;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s ease;
-  }
+        /* التصويرة */
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
 
-  a:hover {
-    background-color: #ffb703;
-    transform: translateY(-2px);
-  }
-</style>
+        /* تأثير خفيف فاش دوز الماوس فوق التصويرة */
+        .card img:hover {
+            transform: scale(1.02);
+        }
 
-<!-- هنا بدلنا العناوين باش يولي السيت متناسق -->
-<div class="card">
-  <h1>voltex-digital</h1>
-  <p>the first digital agency in the region</p>
-  <img src="pic.png">
-  <a href="https://www.google.com">visit our website</a>
-</div>
+        /* البوطون والتأثيرات ديالو */
+        .card .btn {
+            background-color: #ffffff;
+            color: #ff9933;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            /* هادي كتخلي الحركة تكون ناعمة وسلسة */
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* تأثير الماوس فوق البوطون (Hover) */
+        .card .btn:hover {
+            background-color: #ff9933;
+            color: #ffffff;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>voltex-digital</h1>
+        <p>the first digital agency in the region</p>
+        <img src="pic.png" alt="Digital Agency">
+        <br>
+        <button class="btn">visit our website</button>
+    </div>
+
+</body>
+</html>
